@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="rectangle" widtch="500px" height="600px" style="border: 1px solid #d3d3d3" ;></canvas>
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getwidth() {
+            return this.width
+        }
+
+        getHeight() {
+            return this.height
+        }
+
+        setwidth() {
+            this.width = width;
+        }
+
+        setHheight() {
+            this.height = height;
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+    }
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+    }
+
+    function getRandomColor() {
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + green + "," + blue + ")";
+    }
+
+    let rectangle = new Rectangle(200,150);
+    let width = rectangle.getwidth();
+    let height = rectangle.getHeight();
+
+    rectangle.setwidth(200);
+    rectangle.getwidth();
+
+    document.write(rectangle.getwidth());
+
+    let canvas = document.getElementById("rectangle");
+    let ctx = canvas.getContext("2d");
+    let color = getRandomColor()
+    ctx.fillStyle = color;
+    ctx.fillRect(10,10,width,height)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Molbie {
+      id;
+      name
+
+    constructor(id,name) {
+        this.id = id;
+        this.name = name;
+        this.messange = "";
+        this.setMessange = function (messange){
+         this.messange = messange;
+        }
+        this.getMessange = function (messange){
+          return this.messange;
+        }
+        this.sendMessange = function (messange,molbie){
+          molbie.setMessange(messange);
+        }
+    }
+  }
+  let Iphone = new Molbie(1,"Iphone");
+  let Nokia = new Molbie(2,"Nokia");
+  Iphone.sendMessange("Send from Iphone", Nokia);
+  let mesange = Nokia.getMessange();
+  document.write(mesange)
+
+</script>
+</body>
+</html>
